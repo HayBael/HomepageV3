@@ -29,7 +29,7 @@ const Main = ({ children, router }) => {
         <meta name="title" content="Snowy Homepage" />
         <meta
           name="description"
-          content="Hello, I'm a full-stack developer from Indonesia
+          content="Hello, I'm a full-stack developer from Indonesia"
         />
         <meta name="copyright" content="Frazix12" />
 
@@ -38,7 +38,7 @@ const Main = ({ children, router }) => {
         <meta property="og:title" content="Snowy Homepage" />
         <meta
           property="og:description"
-          content="Hello, I'm a full-stack developer from Indonesia
+          content="Hello, I'm a full-stack developer from Indonesia"
         />
         <meta
           property="og:image"
@@ -49,14 +49,14 @@ const Main = ({ children, router }) => {
         <meta property="twitter:title" content="Snowy Homepage" />
         <meta
           property="twitter:description"
-          content="Hello, I'm a full-stack developer from Indonesia
+          content="Hello, I'm a full-stack developer from Indonesia"
         />
         <meta
           property="twitter:image"
           content="http://res.cloudinary.com/dpu5ywrox/image/upload/v1654273284/bd4qai7c7u05aepc0tfa.png"
         />
 
-        <title>Frazix - Homepage</title>
+        <title>Snowy - Homepage</title>
       </Head>
 
       <NavBar path={router.asPath} />
