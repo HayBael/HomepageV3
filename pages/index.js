@@ -44,7 +44,7 @@ const Home = () => (
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
-            Frazix
+            Snowy
           </Heading>
           <p>I am a ( Developer / Gamer)</p>
         </Box>
