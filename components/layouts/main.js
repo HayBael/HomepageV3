@@ -42,7 +42,7 @@ const Main = ({ children, router }) => {
         />
         <meta
           property="og:image"
-          content="http://res.cloudinary.com/dpu5ywrox/image/upload/v1654273284/bd4qai7c7u05aepc0tfa.png"
+          content="https://res.cloudinary.com/dq4ksj85g/image/upload/v1688398459/standard_2_r23d5s.gif"
         />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://frazix.tk/" />
