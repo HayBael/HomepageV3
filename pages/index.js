@@ -147,7 +147,7 @@ const Home = () => (
           </ListItem>
           <ListItem>
             <Link
-              href="https://github.com/craftzdog/craftzdog-homepage"
+              href="https://github.com/HayBael/HomepageV3"
               target="_blank"
             >
               <Button
