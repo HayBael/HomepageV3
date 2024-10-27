@@ -33,13 +33,13 @@ const Works = () => (
             A Simple Website With Clock.
           </WorkGridItem>
         </Section>
-          <Section>
+        >
           <WorkGridItem
-            id="clockui"
-            title="Clock Website"
+            id="clok"
+            title="Asaweh"
             thumbnail={clockUi}
           >
-            A Simple Website With Clock.
+            A Simple Website With Block.
           </WorkGridItem>
         </Section>
       </SimpleGrid>
