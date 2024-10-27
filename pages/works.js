@@ -33,7 +33,7 @@ const Works = () => (
             A Simple Website With Clock.
           </WorkGridItem>
         </Section>
-        >
+        <Section>
           <WorkGridItem
             id="clok"
             title="Asaweh"
