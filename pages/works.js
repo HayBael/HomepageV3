@@ -1,4 +1,4 @@
-import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
+kimport { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
@@ -25,6 +25,15 @@ const Works = () => (
           </WorkGridItem>
         </Section>
         <Section>
+          <WorkGridItem
+            id="clockui"
+            title="Clock Website"
+            thumbnail={clockUi}
+          >
+            A Simple Website With Clock.
+          </WorkGridItem>
+        </Section>
+          <Section>
           <WorkGridItem
             id="clockui"
             title="Clock Website"
