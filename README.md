@@ -1,7 +1,7 @@
 # Snowy's Homepage 
 
 <p align="center">	<!-- (optional) center align -->
-    <img src="./doc/pagespeed.svg">
+    <img src="./doc/IMG.png">
 </p>
 
 ## 
