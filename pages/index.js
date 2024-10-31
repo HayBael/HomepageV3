@@ -188,7 +188,7 @@ const Home = () => (
           <Button
             as={NextLink}
             href="https://saweria.co/HayBael"
-            scroll={false}
+            scroll={true}
             leftIcon={<EmailIcon />}
             colorScheme="teal"
           >
