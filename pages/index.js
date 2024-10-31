@@ -119,7 +119,7 @@ const Home = () => (
         </BioSection>
         <BioSection>
           <BioYear>2023 Sampe Sekarang</BioYear>
-          Sekolah Di SMP Islam Al Azhar 36
+          Sekolah Di SMP Islam Al Azhar 
         </BioSection>
       </Section>
     
