@@ -183,6 +183,18 @@ const Home = () => (
             </Link>
           </ListItem>
         </List>
+          
+        <Box align="center" my={4}>
+          <Button
+            as={NextLink}
+            href="https://www.devas.life/"
+            scroll={false}
+            leftIcon={<EmailIcon />}
+            colorScheme="teal"
+          >
+            Sign up my newsletter here
+          </Button>
+        </Box>
       </Section>
     </Container>
   </Layout>
