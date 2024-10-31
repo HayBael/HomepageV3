@@ -184,10 +184,12 @@ const Home = () => (
             </Link>
           </ListItem>
         </List>
-
-          <ProgressRoot maxW="240px" value={null}>
-            <ProgressBar />
-          </ProgressRoot>
+       
+        const Demo = () => {
+          return (
+            <ProgressRoot maxW="240px" value={null}>
+              <ProgressBar />
+            </ProgressRoot>
     
           <Box align="center" my={4}>
           <Button
