@@ -184,7 +184,7 @@ const Home = () => (
           </ListItem>
         </List>
           
-        <Box align="center" my={4}>
+      <Box align="center" my={4}>
           <Button
             as={NextLink}
             href="https://www.devas.life/"
