@@ -15,6 +15,7 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { BioSection, BioYear } from '../components/bio'
 import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
+import { ProgressBar, ProgressRoot } from "@/components/ui/progress"
 
 import {
   IoLogoYoutube,
@@ -183,8 +184,12 @@ const Home = () => (
             </Link>
           </ListItem>
         </List>
-          
-      <Box align="center" my={4}>
+
+          <ProgressRoot maxW="240px" value={null}>
+            <ProgressBar />
+          </ProgressRoot>
+    
+          <Box align="center" my={4}>
           <Button
             as={NextLink}
             href="https://www.devas.life/"
