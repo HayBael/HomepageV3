@@ -184,11 +184,11 @@ const Home = () => (
           </ListItem>
         </List>
       
-        <Box align="center" my={7}>
+        <Box align="center" my={20}>
           <Button
             as={NextLink}
             href="https://saweria.co/HayBael"
-            scroll={true}
+            scroll={false}
             leftIcon={<EmailIcon />}
             colorScheme="teal"
           >
