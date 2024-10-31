@@ -187,7 +187,7 @@ const Home = () => (
           <Box align="center" my={4}>
           <Button
             as={NextLink}
-            href="https://www.devas.life/"
+            href="https://saweria.co/HayBael"
             scroll={false}
             leftIcon={<EmailIcon />}
             colorScheme="teal"
