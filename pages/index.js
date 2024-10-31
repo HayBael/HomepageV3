@@ -14,7 +14,7 @@ import Paragraph from '../components/paragraph'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { BioSection, BioYear } from '../components/bio'
-import { ChevronRightIcon, MoneyIcon } from '@chakra-ui/icons'
+import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
 
 import {
   IoLogoYoutube,
@@ -192,7 +192,7 @@ const Home = () => (
             leftIcon={<EmailIcon />}
             colorScheme="teal"
           >
-            Sign up my newsletter here
+            Saweria
           </Button>
         </Box>
       </Section>
