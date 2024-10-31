@@ -15,7 +15,6 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { BioSection, BioYear } from '../components/bio'
 import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
-import { ProgressBar, ProgressRoot } from "@/components/ui/progress"
 
 import {
   IoLogoYoutube,
@@ -184,13 +183,7 @@ const Home = () => (
             </Link>
           </ListItem>
         </List>
-       
-        const Demo = () => {
-          return (
-            <ProgressRoot maxW="240px" value={null}>
-              <ProgressBar />
-            </ProgressRoot>
-    
+      
           <Box align="center" my={4}>
           <Button
             as={NextLink}
