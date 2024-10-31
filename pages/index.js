@@ -10,11 +10,11 @@ import {
   useColorModeValue,
   chakra
 } from '@chakra-ui/react'
-import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { BioSection, BioYear } from '../components/bio'
+import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
 
 import {
   IoLogoYoutube,
