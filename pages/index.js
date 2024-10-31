@@ -101,18 +101,6 @@ const Home = () => (
         </Box>
       </Section>
 
-        <Box align="center" my={4}>
-          <Button
-            as={NextLink}
-            href="https://saweria.co/HayBael"
-            scroll={false}
-            leftIcon={<EmailIcon />}
-            colorScheme="teal"
-          >
-            Saweria
-          </Button>
-        </Box>
-
       <Section delay={0.2}>
         <Heading as="h3" variant="section-title">
           Bio
@@ -195,6 +183,18 @@ const Home = () => (
             </Link>
           </ListItem>
         </List>
+      
+        <Box align="center" my={7}>
+          <Button
+            as={NextLink}
+            href="https://saweria.co/HayBael"
+            scroll={false}
+            leftIcon={<EmailIcon />}
+            colorScheme="teal"
+          >
+            Saweria
+          </Button>
+        </Box>
       </Section>
     </Container>
   </Layout>
