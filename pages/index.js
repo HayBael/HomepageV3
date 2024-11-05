@@ -20,8 +20,7 @@ import {
   IoLogoYoutube,
   IoLogoGithub,
   IoFolderOpenOutline,
-  IoLogoDiscord
-  IoLogoInstagram
+  IoLogoInstagram,
 
 } from 'react-icons/io5'
 import Image from 'next/image'
