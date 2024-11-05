@@ -128,7 +128,7 @@ const Home = () => (
         <Heading as="h3" variant="section-title">
           I Love 💖
         </Heading>
-        <Paragraph>Gaming, Coding And listening music</Paragraph>
+        <Paragraph>Listening Music, Dll</Paragraph>
       </Section>
 
       <Section delay={0.3}>
