@@ -148,24 +148,13 @@ const Home = () => (
             </Link>
           </ListItem>
           <ListItem>
-            <Link href=" " target="_blank">
+            <Link href="https://www.instagram.com/wargadarat/profilecard/?igsh=MWFmMzJsbWtoZTZhNw==" target="_blank">
               <Button
                 variant="ghost"
                 colorScheme="purple"
-                leftIcon={<IoLogoYoutube />}
+                leftIcon={<IoLogoInstagram />}
               >
-                SnowyID
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://discord.gg/ynWdPzqhdH" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="purple"
-                leftIcon={<IoLogoDiscord />}
-              >
-                Discord Server
+                 @wargadarat
               </Button>
             </Link>
           </ListItem>
