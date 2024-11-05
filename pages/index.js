@@ -22,6 +22,7 @@ import {
   IoFolderOpenOutline,
   IoLogoDiscord
   IoLogoInstagram
+
 } from 'react-icons/io5'
 import Image from 'next/image'
 
