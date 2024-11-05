@@ -154,7 +154,7 @@ const Home = () => (
                 colorScheme="purple"
                 leftIcon={<IoLogoInstagram />}
               >
-                 @wargadarat
+               @wargadarat
               </Button>
             </Link>
           </ListItem>
