@@ -67,7 +67,7 @@ const Home = () => (
             overflow="hidden"
           >
             <ProfileImage
-              src="/public/genshin.jpeg"
+              src="/images/genshin.jpeg"
               alt="Profile image"
               borderRadius="full"
               width="100"
