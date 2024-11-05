@@ -19,7 +19,7 @@ const Main = ({ children, router }) => {
         <meta name="description" content="Snowy homepage" />
         <meta name="author" content="Snowy" />
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+        <link rel="genshin" href="genshin.jpeg" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <meta property="og:site_name" content="Snowy" />
 
