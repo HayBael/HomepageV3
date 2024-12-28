@@ -6,10 +6,8 @@ const themes = ['light', 'dark']
 export default function ThemeToggle() {
   const [isMounted, setIsMounted] = useState(false)
   const [theme, setTheme] = useState(() => {
-    if (import.meta.env.SSR) {
-      return undefined
-    }
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+    if (typeof window === 'undefined') return undefined
+    if (localStorage.getItem('theme')) {
       return localStorage.getItem('theme')
     }
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -17,7 +15,9 @@ export default function ThemeToggle() {
     }
     return 'light'
   })
+
   const toggleTheme = () => {
+    if (typeof window === 'undefined') return
     const t = theme === 'light' ? 'dark' : 'light'
     localStorage.setItem('theme', t)
     setTheme(t)
@@ -25,10 +25,12 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     const root = document.documentElement
-    if (theme === 'light') {
-      root.classList.remove('dark')
-    } else {
-      root.classList.add('dark')
+    if (theme) {
+      if (theme === 'light') {
+        root.classList.remove('dark')
+      } else {
+        root.classList.add('dark')
+      }
     }
   }, [theme])
 
@@ -55,6 +57,6 @@ export default function ThemeToggle() {
       })}
     </div>
   ) : (
-    <div />
+    <div className="p-2 text-gray-500">Loading...</div>
   )
 }
