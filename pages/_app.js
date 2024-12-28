@@ -1,13 +1,29 @@
+import { useEffect, useState } from 'react';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
+  const [theme, setTheme] = useState('light');
+
   useEffect(() => {
-    const theme = localStorage.getItem('theme') || 'light';
-    console.log('Initial theme:', theme); // Debug log
-    document.documentElement.classList.toggle('dark', theme === 'dark');
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+      setTheme(savedTheme);
+    }
   }, []);
 
-  return <Component {...pageProps} />;
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    setTheme(newTheme);
+  };
+
+  return (
+    <>
+      <Component {...pageProps} toggleTheme={toggleTheme} theme={theme} />
+    </>
+  );
 }
 
 export default MyApp;
