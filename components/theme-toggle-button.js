@@ -1,64 +1,42 @@
 import React, { useEffect, useState } from 'react'
 import { IoSunny, IoMoon } from 'react-icons/io5'
 
-// Tema yang tersedia
-const themes = ['light', 'dark']
-
 export default function ThemeToggle() {
-  const [isMounted, setIsMounted] = useState(false)
-  const [theme, setTheme] = useState(() => {
-    // Cek apakah kode dijalankan di server atau client
-    if (typeof window === 'undefined') {
-      return 'light' // Default tema di server
-    }
+  const [theme, setTheme] = useState('light')
+
+  useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     if (savedTheme) {
-      return savedTheme
-    }
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark'
-    }
-    return 'light'
-  })
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light'
-    localStorage.setItem('theme', newTheme)
-    setTheme(newTheme)
-  }
-
-  useEffect(() => {
-    const root = document.documentElement
-    if (theme === 'light') {
-      root.classList.remove('dark')
+      setTheme(savedTheme)
     } else {
-      root.classList.add('dark')
+      setTheme(prefersDark ? 'dark' : 'light')
     }
-  }, [theme])
-
-  useEffect(() => {
-    setIsMounted(true)
   }, [])
 
-  return isMounted ? (
-    <div className="inline-flex items-center p-[1px] rounded-3xl bg-orange-300 dark:bg-zinc-600">
-      {themes.map(t => {
-        const checked = t === theme
-        return (
-          <button
-            key={t}
-            className={`${
-              checked ? 'bg-white text-black' : ''
-            } cursor-pointer rounded-3xl p-2`}
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-          >
-            {t === 'light' ? <IoSunny /> : <IoMoon />}
-          </button>
-        )
-      })}
+  useEffect(() => {
+    const root = window.document.documentElement
+    if (theme === 'dark') {
+      root.classList.add('dark')
+    } else {
+      root.classList.remove('dark')
+    }
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light')
+  }
+
+  return (
+    <div className="flex items-center justify-center space-x-2">
+      <button
+        onClick={toggleTheme}
+        className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition duration-300"
+        aria-label="Toggle theme"
+      >
+        {theme === 'light' ? <IoMoon size={24} /> : <IoSunny size={24} />}
+      </button>
     </div>
-  ) : (
-    <div />
   )
 }
