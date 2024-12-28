@@ -23,7 +23,17 @@ module.exports = {
         lightText: '#000000',
         darkText: '#ffffff',
       },
+      backgroundColor: theme => ({
+        ...theme('colors'),
+        light: '#ffffff', // Latar belakang untuk mode terang
+        dark: '#1a202c', // Latar belakang untuk mode gelap
+      }),
+      textColor: theme => ({
+        ...theme('colors'),
+        light: '#000000', // Teks untuk mode terang
+        dark: '#ffffff', // Teks untuk mode gelap
+      }),
     },
   },
-  plugins: [], // Tambahkan plugin jika dibutuhkan
-}
+  plugins: [],
+};
