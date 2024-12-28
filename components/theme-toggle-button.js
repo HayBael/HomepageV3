@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { IoSunny, IoMoon } from 'react-icons/io5'
 
+// Tema yang tersedia
 const themes = ['light', 'dark']
 
 export default function ThemeToggle() {
   const [isMounted, setIsMounted] = useState(false)
   const [theme, setTheme] = useState(() => {
-    if (typeof window === 'undefined') return undefined
-    if (localStorage.getItem('theme')) {
-      return localStorage.getItem('theme')
+    // Cek apakah kode dijalankan di server atau client
+    if (typeof window === 'undefined') {
+      return 'light' // Default tema di server
+    }
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme) {
+      return savedTheme
     }
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'dark'
@@ -17,20 +22,17 @@ export default function ThemeToggle() {
   })
 
   const toggleTheme = () => {
-    if (typeof window === 'undefined') return
-    const t = theme === 'light' ? 'dark' : 'light'
-    localStorage.setItem('theme', t)
-    setTheme(t)
+    const newTheme = theme === 'light' ? 'dark' : 'light'
+    localStorage.setItem('theme', newTheme)
+    setTheme(newTheme)
   }
 
   useEffect(() => {
     const root = document.documentElement
-    if (theme) {
-      if (theme === 'light') {
-        root.classList.remove('dark')
-      } else {
-        root.classList.add('dark')
-      }
+    if (theme === 'light') {
+      root.classList.remove('dark')
+    } else {
+      root.classList.add('dark')
     }
   }, [theme])
 
@@ -57,6 +59,6 @@ export default function ThemeToggle() {
       })}
     </div>
   ) : (
-    <div className="p-2 text-gray-500">Loading...</div>
+    <div />
   )
 }
