@@ -1,13 +1,31 @@
-import { IoSunny, IoMoon } from 'react-icons/io5';
+import { AnimatePresence, motion } from 'framer-motion'
+import { IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react'
+import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 
-export default function ThemeToggle({ theme, toggleTheme }) {
+const ThemeToggleButton = () => {
+  const { toggleColorMode } = useColorMode()
+
   return (
-    <button
-      onClick={toggleTheme}
-      className="p-2 rounded-full bg-gray-200 dark:bg-gray-800"
-      aria-label="Toggle Theme"
-    >
-      {theme === 'light' ? <IoSunny size={24} /> : <IoMoon size={24} />}
-    </button>
-  );
+    <AnimatePresence mode='wait' initial={false}>
+      <motion.div
+        style={{ display: 'inline-block' }}
+        key={useColorModeValue('light', 'dark')}
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 20, opacity: 0 }}
+        transition={{ duration: 0.2 }}
+      >
+        <IconButton
+          aria-label="Toggle theme"
+          colorScheme={useColorModeValue('purple', 'orange')}
+          icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
+          onClick={toggleColorMode}
+        ></IconButton>
+      </motion.div>
+    </AnimatePresence>
+  )
 }
+
+export default ThemeToggleButton
+Home
+Docs
