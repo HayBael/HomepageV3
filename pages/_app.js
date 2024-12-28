@@ -1,29 +1,32 @@
-import { useEffect, useState } from 'react';
-import '../styles/globals.css';
+import Layout from '../components/layouts/main'
+import Fonts from '../components/fonts'
+import { AnimatePresence } from 'framer-motion'
+import '../styles/globals.css'
+import Chakra from '../components/chakra'
 
-function MyApp({ Component, pageProps }) {
-  const [theme, setTheme] = useState('light');
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      document.documentElement.classList.toggle('dark', savedTheme === 'dark');
-      setTheme(savedTheme);
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('dark', newTheme === 'dark');
-    setTheme(newTheme);
-  };
-
-  return (
-    <>
-      <Component {...pageProps} toggleTheme={toggleTheme} theme={theme} />
-    </>
-  );
+if (typeof window !== 'undefined') {
+  window.history.scrollRestoration = 'manual'
 }
 
-export default MyApp;
+function Website({ Component, pageProps, router }) {
+  return (
+    <Chakra cookies={pageProps.cookies}>
+      <Fonts />
+      <Layout router={router}>
+        <AnimatePresence
+          mode='wait'
+          initial={true}
+          onExitComplete={() => {
+            if (typeof window !== 'undefined') {
+              window.scrollTo({ top: 0 })
+            }
+          }}
+        >
+          <Component {...pageProps} key={router.route} />
+        </AnimatePresence>
+      </Layout>
+    </Chakra>
+  )
+}
+
+export default Website
