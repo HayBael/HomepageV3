@@ -1,19 +1,18 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}', 
-    './components/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}'
   ],
   darkMode: 'class',
   theme: {
     extend: {
-      colors: {
-        lightBackground: '#ffffff',
-        darkBackground: '#1a202c',
-        lightText: '#000000',
-        darkText: '#ffffff',
+      screens: {
+        xs: '445px'
       },
-    },
+      animation: {
+        'spin-slow': 'spin 2s linear infinite'
+      }
+    }
   },
-  plugins: [],
-};
+  plugins: []
+}
