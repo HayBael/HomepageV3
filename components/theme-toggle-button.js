@@ -27,5 +27,3 @@ const ThemeToggleButton = () => {
 }
 
 export default ThemeToggleButton
-Home
-Docs
