@@ -8,7 +8,6 @@ export default class Document extends NextDocument {
       <Html lang="en">
         <Head />
         <body>
-          {/* Chakra UI ColorModeScript ensures the correct initial theme */}
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
