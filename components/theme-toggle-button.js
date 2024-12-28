@@ -1,48 +1,45 @@
-import React, { useEffect, useState } from 'react';
-import { IoSunny, IoMoon } from 'react-icons/io5';
+import React, { useEffect, useState } from 'react'
+import { IoSunny, IoMoon } from 'react-icons/io5'
 
-const themes = ['light', 'dark'];
+const themes = ['light', 'dark']
 
 export default function ThemeToggle() {
-  const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false)
   const [theme, setTheme] = useState(() => {
-    if (typeof window === 'undefined') {
-      return 'light';
+    if (import.meta.env.SSR) {
+      return undefined
     }
     if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-      return localStorage.getItem('theme');
+      return localStorage.getItem('theme')
     }
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
+      return 'dark'
     }
-    return 'light';
-  });
-
+    return 'light'
+  })
   const toggleTheme = () => {
-    const t = theme === 'light' ? 'dark' : 'light';
-    localStorage.setItem('theme', t);
-    setTheme(t);
-  };
+    const t = theme === 'light' ? 'dark' : 'light'
+    localStorage.setItem('theme', t)
+    setTheme(t)
+  }
 
   useEffect(() => {
-    const root = document.documentElement;
+    const root = document.documentElement
     if (theme === 'light') {
-      root.classList.remove('dark');
-      root.style.backgroundColor = '#f3f4f6'; // Background warna terang
+      root.classList.remove('dark')
     } else {
-      root.classList.add('dark');
-      root.style.backgroundColor = '#374151'; // Background warna gelap
+      root.classList.add('dark')
     }
-  }, [theme]);
+  }, [theme])
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
+    setIsMounted(true)
+  }, [])
 
   return isMounted ? (
     <div className="inline-flex items-center p-[1px] rounded-3xl bg-orange-300 dark:bg-zinc-600">
-      {themes.map((t) => {
-        const checked = t === theme;
+      {themes.map(t => {
+        const checked = t === theme
         return (
           <button
             key={t}
@@ -54,10 +51,10 @@ export default function ThemeToggle() {
           >
             {t === 'light' ? <IoSunny /> : <IoMoon />}
           </button>
-        );
+        )
       })}
     </div>
   ) : (
     <div />
-  );
+  )
 }
