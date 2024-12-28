@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { IoSunny, IoMoon } from 'react-icons/io5';
 
-const themes = ['light', 'dark'];
-
 export default function ThemeToggle() {
   const [theme, setTheme] = useState('light');
 
@@ -20,19 +18,8 @@ export default function ThemeToggle() {
   }, []);
 
   return (
-    <div className="inline-flex items-center p-1 rounded-3xl bg-orange-300 dark:bg-zinc-600">
-      {themes.map((t) => (
-        <button
-          key={t}
-          className={`${
-            theme === t ? 'bg-white text-black' : ''
-          } cursor-pointer rounded-3xl p-2`}
-          onClick={toggleTheme}
-          aria-label="Toggle theme"
-        >
-          {t === 'light' ? <IoSunny /> : <IoMoon />}
-        </button>
-      ))}
-    </div>
+    <button onClick={toggleTheme} className="p-2 bg-gray-300 dark:bg-gray-800 rounded">
+      {theme === 'light' ? <IoSunny /> : <IoMoon />}
+    </button>
   );
 }
