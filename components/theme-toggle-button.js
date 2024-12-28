@@ -7,7 +7,7 @@ export default function ThemeToggle() {
   const [isMounted, setIsMounted] = useState(false);
   const [theme, setTheme] = useState(() => {
     if (typeof window === 'undefined') {
-      return undefined;
+      return 'light';
     }
     if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
       return localStorage.getItem('theme');
@@ -28,8 +28,10 @@ export default function ThemeToggle() {
     const root = document.documentElement;
     if (theme === 'light') {
       root.classList.remove('dark');
+      root.style.backgroundColor = '#f3f4f6'; // Background warna terang
     } else {
       root.classList.add('dark');
+      root.style.backgroundColor = '#374151'; // Background warna gelap
     }
   }, [theme]);
 
