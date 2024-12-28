@@ -1,39 +1,13 @@
-import { useEffect } from 'react';
-import Layout from '../components/layouts/main';
-import Fonts from '../components/fonts';
-import { AnimatePresence } from 'framer-motion';
 import '../styles/globals.css';
-import Chakra from '../components/chakra';
 
-if (typeof window !== 'undefined') {
-  window.history.scrollRestoration = 'manual';
-}
-
-function Website({ Component, pageProps, router }) {
-  // Apply the theme from localStorage when the app loads
+function MyApp({ Component, pageProps }) {
   useEffect(() => {
     const theme = localStorage.getItem('theme') || 'light';
-    document.documentElement.classList.add(theme);
+    console.log('Initial theme:', theme); // Debug log
+    document.documentElement.classList.toggle('dark', theme === 'dark');
   }, []);
 
-  return (
-    <Chakra cookies={pageProps.cookies}>
-      <Fonts />
-      <Layout router={router}>
-        <AnimatePresence
-          mode="wait"
-          initial={true}
-          onExitComplete={() => {
-            if (typeof window !== 'undefined') {
-              window.scrollTo({ top: 0 });
-            }
-          }}
-        >
-          <Component {...pageProps} key={router.route} />
-        </AnimatePresence>
-      </Layout>
-    </Chakra>
-  );
+  return <Component {...pageProps} />;
 }
 
-export default Website;
+export default MyApp;
