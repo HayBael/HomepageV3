@@ -1,42 +1,38 @@
-import React, { useEffect, useState } from 'react'
-import { IoSunny, IoMoon } from 'react-icons/io5'
+import React, { useEffect, useState } from 'react';
+import { IoSunny, IoMoon } from 'react-icons/io5';
+
+const themes = ['light', 'dark'];
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState('light')
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme')
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    if (savedTheme) {
-      setTheme(savedTheme)
-    } else {
-      setTheme(prefersDark ? 'dark' : 'light')
-    }
-  }, [])
-
-  useEffect(() => {
-    const root = window.document.documentElement
-    if (theme === 'dark') {
-      root.classList.add('dark')
-    } else {
-      root.classList.remove('dark')
-    }
-    localStorage.setItem('theme', theme)
-  }, [theme])
+  const [theme, setTheme] = useState('light');
 
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light')
-  }
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    localStorage.setItem('theme', newTheme);
+    setTheme(newTheme);
+  };
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    setTheme(savedTheme);
+  }, []);
 
   return (
-    <div className="flex items-center justify-center space-x-2">
-      <button
-        onClick={toggleTheme}
-        className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition duration-300"
-        aria-label="Toggle theme"
-      >
-        {theme === 'light' ? <IoMoon size={24} /> : <IoSunny size={24} />}
-      </button>
+    <div className="inline-flex items-center p-1 rounded-3xl bg-orange-300 dark:bg-zinc-600">
+      {themes.map((t) => (
+        <button
+          key={t}
+          className={`${
+            theme === t ? 'bg-white text-black' : ''
+          } cursor-pointer rounded-3xl p-2`}
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+        >
+          {t === 'light' ? <IoSunny /> : <IoMoon />}
+        </button>
+      ))}
     </div>
-  )
+  );
 }
