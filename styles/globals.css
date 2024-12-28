@@ -1,60 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Reset dasar */
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: 'JetBrains Mono', monospace;
-  background: #000; /* Gunakan mode gelap default */
-  color: #fff; /* Tambahkan warna teks default */
   overscroll-behavior-y: none;
 }
 
-/* Link tetap mewarisi warna */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* Terapkan box-sizing ke semua elemen */
 * {
   box-sizing: border-box;
 }
 
-/* Sembunyikan elemen dengan kelas spinner */
-.spinner {
-  display: none !important;
+html {
+  background-color: #ffffff;
+  color: #000000;
 }
 
-/* Sembunyikan scrollbar untuk WebKit (Chrome, Safari) */
-::-webkit-scrollbar {
-  display: none !important;
-}
-
-/* Pastikan elemen root mendukung dark mode */
-:root {
-  --bg-light: #fff; /* Warna latar belakang untuk light mode */
-  --text-light: #000; /* Warna teks untuk light mode */
-  --bg-dark: #000; /* Warna latar belakang untuk dark mode */
-  --text-dark: #fff; /* Warna teks untuk dark mode */
-}
-
-body {
-  transition: background-color 0.3s ease, color 0.3s ease; /* Tambahkan animasi transisi */
-}
-
-/* Light mode */
-body.light {
-  background-color: var(--bg-light);
-  color: var(--text-light);
-}
-
-/* Dark mode */
-body.dark {
-  background-color: var(--bg-dark);
-  color: var(--text-dark);
+html.dark {
+  background-color: #1a202c;
+  color: #ffffff;
 }
