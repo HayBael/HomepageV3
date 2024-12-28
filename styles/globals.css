@@ -3,28 +3,58 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Reset dasar */
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: 'JetBrains Mono', monospace;
-  background: #000;
+  background: #000; /* Gunakan mode gelap default */
+  color: #fff; /* Tambahkan warna teks default */
   overscroll-behavior-y: none;
 }
 
+/* Link tetap mewarisi warna */
 a {
   color: inherit;
   text-decoration: none;
 }
 
+/* Terapkan box-sizing ke semua elemen */
 * {
   box-sizing: border-box;
 }
 
+/* Sembunyikan elemen dengan kelas spinner */
 .spinner {
   display: none !important;
 }
 
+/* Sembunyikan scrollbar untuk WebKit (Chrome, Safari) */
 ::-webkit-scrollbar {
- display: none !important;
+  display: none !important;
+}
+
+/* Pastikan elemen root mendukung dark mode */
+:root {
+  --bg-light: #fff; /* Warna latar belakang untuk light mode */
+  --text-light: #000; /* Warna teks untuk light mode */
+  --bg-dark: #000; /* Warna latar belakang untuk dark mode */
+  --text-dark: #fff; /* Warna teks untuk dark mode */
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease; /* Tambahkan animasi transisi */
+}
+
+/* Light mode */
+body.light {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+/* Dark mode */
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
 }
