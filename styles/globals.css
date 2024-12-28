@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  padding: 0;
-  margin: 0;
+html {
   font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
   overscroll-behavior-y: none;
 }
 
@@ -19,12 +22,16 @@ a {
   box-sizing: border-box;
 }
 
-html {
+.dark body {
+  background-color: #1a202c;
+  color: #ffffff;
+}
+
+body {
   background-color: #ffffff;
   color: #000000;
 }
 
-html.dark {
-  background-color: #1a202c;
-  color: #ffffff;
+::-webkit-scrollbar {
+  display: none;
 }
