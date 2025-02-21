@@ -14,7 +14,8 @@ import Paragraph from '../components/paragraph'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { BioSection, BioYear } from '../components/bio'
-import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
+import { ChevronRightIcon } from '@chakra-ui/icons'
+import { RiMoneyDollarBoxLine } from "react-icons/ri";
 
 import {
   IoLogoYoutube,
@@ -179,7 +180,7 @@ const Home = () => (
             as={NextLink}
             href="https://saweria.co/HayBael"
             scroll={false}
-            leftIcon={<EmailIcon />}
+            leftIcon={<RiMoneyDollarBoxLine />}
             colorScheme="teal"
           >
             Saweria
