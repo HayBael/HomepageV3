@@ -1,7 +1,7 @@
 import { Icon, HStack, useColorMode } from "@chakra-ui/react";
 import { Switch } from "@chakra-ui/react";
-import { FaMoon, FaSun } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import { IoIosRadioButtonOff, IoIosRadioButtonOn } from "react-icons/io";
 
 const ThemeToggleSwitch = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -17,7 +17,7 @@ const ThemeToggleSwitch = () => {
           transition={{ duration: 0.2 }}
         >
           <Icon color={colorMode === "light" ? "yellow.400" : "gray.400"}>
-            {colorMode === "light" ? <FaSun /> : <FaMoon />}
+            {colorMode === "light" ? <IoIosRadioButtonOn /> : <IoIosRadioButtonOff />}
           </Icon>
         </motion.div>
       </AnimatePresence>
