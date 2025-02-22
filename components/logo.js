@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { Text, useColorModeValue } from '@chakra-ui/react'
-import FootprintIcon from './icons/footprint' // Ganti jika ada ikon lain yang lebih cocok
+import FootprintIcon from './icons/footprint'
 import styled from '@emotion/styled'
 
-const LogoBox = styled.span`
+const LogoBox = styled.span
   font-weight: bold;
   font-size: 18px;
   display: inline-flex;
@@ -19,11 +19,12 @@ const LogoBox = styled.span`
   &:hover > svg {
     transform: rotate(20deg);
   }
-`
+
 
 const Logo = () => {
   return (
-    <Link href="/" scroll={false}>
+    (<Link href="/" scroll={false}>
+
       <LogoBox>
         <FootprintIcon />
         <Text
@@ -32,11 +33,12 @@ const Logo = () => {
           fontWeight="bold"
           ml={3}
         >
-          DiLinux
+          PreferLinux
         </Text>
       </LogoBox>
-    </Link>
-  )
+
+    </Link>)
+  );
 }
 
 export default Logo
