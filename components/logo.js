@@ -32,7 +32,7 @@ const Logo = () => {
           fontWeight="bold"
           ml={3}
         >
-          PreferLinux
+          preferlinux
         </Text>
       </LogoBox>
     </Link>
