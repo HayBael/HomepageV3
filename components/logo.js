@@ -1,9 +1,9 @@
-import Link from 'next/link'
-import { Text, useColorModeValue } from '@chakra-ui/react'
-import FootprintIcon from './icons/footprint'
-import styled from '@emotion/styled'
+import Link from 'next/link';
+import { Text, useColorModeValue } from '@chakra-ui/react';
+import { DiLinux } from "react-icons/di";
+import styled from '@emotion/styled';
 
-const LogoBox = styled.span
+const LogoBox = styled.span`
   font-weight: bold;
   font-size: 18px;
   display: inline-flex;
@@ -19,14 +19,13 @@ const LogoBox = styled.span
   &:hover > svg {
     transform: rotate(20deg);
   }
-
+`;
 
 const Logo = () => {
   return (
-    (<Link href="/" scroll={false}>
-
+    <Link href="/" scroll={false}>
       <LogoBox>
-        <FootprintIcon />
+        <DiLinux size={24} />
         <Text
           color={useColorModeValue('gray.800', 'whiteAlpha.900')}
           fontFamily='JetBrains Mono'
@@ -36,9 +35,8 @@ const Logo = () => {
           PreferLinux
         </Text>
       </LogoBox>
-
-    </Link>)
+    </Link>
   );
 }
 
-export default Logo
+export default Logo;
