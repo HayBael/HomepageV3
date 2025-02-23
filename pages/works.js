@@ -19,7 +19,7 @@ const Works = () => (
             id="clok"
             title={
               <Stack direction="row" align="center" spacing={3}>
-                <Box bg="blue.700" color="white" px={4} py={2} borderRadius="md" display="flex" alignItems="center" fontWeight="bold" fontSize="lg">
+                <Box bg="blue.700" color="white" px={1} py={2} borderRadius="md" display="flex" alignItems="center" fontWeight="bold" fontSize="xs">
                   <HiStar style={{ marginRight: 6 }} /> NEW
                 </Box>
                 <Text fontSize="lg" fontWeight="bold">Melodify</Text>
