@@ -18,9 +18,9 @@ const Works = () => (
           <WorkGridItem
             id="clok"
             title={
-              <Stack direction="row" align="center">
-                <Badge variant="solid" colorScheme="blue" fontSize="0.8em" p={1}>
-                  <HiStar /> New
+              <Stack direction="row" align="center" spacing={2}>
+                <Badge variant="solid" colorScheme="blue" fontSize="sm" px={2} py={1} borderRadius="md">
+                  <HiStar style={{ marginRight: 4 }} /> New
                 </Badge>
                 <span>Melodify</span>
               </Stack>
