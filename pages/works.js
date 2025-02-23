@@ -3,7 +3,7 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
 
-import clockUi from '../public/images/works/Clock.png'
+import clockUi from '../public/images/works/Melodify.png'
 
 const Works = () => (
   <Layout title="Works">
