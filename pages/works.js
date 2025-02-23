@@ -3,7 +3,7 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
 
-import clockUi from '../public/images/works/Melodify.png'
+import melodify from '../public/images/works/Melodify.png'
 
 const Works = () => (
   <Layout title="Works">
@@ -17,7 +17,7 @@ const Works = () => (
           <WorkGridItem
             id="clok"
             title="Melodify"
-            thumbnail={clockUi}
+            thumbnail={melodify}
           >
             Feel the Rhythm, Control the Sound.
           </WorkGridItem>
