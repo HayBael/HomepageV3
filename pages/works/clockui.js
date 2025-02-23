@@ -5,22 +5,22 @@ import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 
 const Work = () => (
-  <Layout title="Clock Ui">
+  <Layout title="Melodify">
     <Container>
-      <Title>Clock Website</Title>
-      <P>A Simple Website With Clock</P>
+      <Title>Melodify</Title>
+      <P>Feel the Rhythm, Control the Sound.</P>
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Website</Meta>
           <Link
-            href="https://clock.brutalmc.ml"
+            href="https://melodify.example.com"
             target="_blank"
           >
-            clock.brutalmc.ml <ExternalLinkIcon mx="2px" />
+            melodify.example.com <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
       </List>
-      <WorkImage src="/images/works/Clock.png" alt="Clock Image" />
+      <WorkImage src="/images/works/Melodify.png" alt="Melodify Image" />
     </Container>
   </Layout>
 )
