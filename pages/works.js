@@ -1,5 +1,4 @@
-import { Container, Heading, SimpleGrid, Badge, Stack, Box, Text } from '@chakra-ui/react'
-import { HiStar } from "react-icons/hi"
+import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
@@ -17,14 +16,7 @@ const Works = () => (
         <Section>
           <WorkGridItem
             id="clok"
-            title={
-              <Stack direction="row" align="center" spacing={1}>
-                <Box bg="blue.400" color="white" px={1} py={1} borderRadius="xs" display="flex" alignItems="center" fontWeight="bold" fontSize="xs">
-                  <HiStar style={{ marginRight: 1 }} /> NEW
-                </Box>
-                <Text fontSize="md" fontWeight="bold">Melodify</Text>
-              </Stack>
-            }
+            title="Melodify"
             thumbnail={clockUi}
           >
             Feel the Rhythm, Control the Sound.
