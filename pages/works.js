@@ -22,7 +22,7 @@ const Works = () => (
                 <Box bg="blue.400" color="white" px={1} py={1} borderRadius="xs" display="flex" alignItems="center" fontWeight="bold" fontSize="xs">
                   <HiStar style={{ marginRight: 1 }} /> NEW
                 </Box>
-                <Text fontSize="lg" fontWeight="bold">Melodify</Text>
+                <Text fontSize="md" fontWeight="bold">Melodify</Text>
               </Stack>
             }
             thumbnail={clockUi}
