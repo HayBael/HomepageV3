@@ -1,4 +1,4 @@
-import { Container, Heading, SimpleGrid, Badge, Stack } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid, Badge, Stack, Box, Text } from '@chakra-ui/react'
 import { HiStar } from "react-icons/hi"
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
@@ -18,11 +18,11 @@ const Works = () => (
           <WorkGridItem
             id="clok"
             title={
-              <Stack direction="row" align="center" spacing={2}>
-                <Badge variant="solid" colorScheme="blue" fontSize="md" px={3} py={2} borderRadius="xs" display="flex" alignItems="center" gap={1}>
-                  <HiStar /> New
-                </Badge>
-                <span>Melodify</span>
+              <Stack direction="row" align="center" spacing={3}>
+                <Box bg="blue.700" color="white" px={4} py={2} borderRadius="md" display="flex" alignItems="center" fontWeight="bold" fontSize="lg">
+                  <HiStar style={{ marginRight: 6 }} /> NEW
+                </Box>
+                <Text fontSize="lg" fontWeight="bold">Melodify</Text>
               </Stack>
             }
             thumbnail={clockUi}
