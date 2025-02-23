@@ -19,10 +19,10 @@ const Works = () => (
             id="clok"
             title={
               <Stack direction="row" align="center">
-                <span>Melodify</span>
-                <Badge variant="solid" colorScheme="blue">
+                <Badge variant="solid" colorScheme="blue" fontSize="0.8em" p={1}>
                   <HiStar /> New
                 </Badge>
+                <span>Melodify</span>
               </Stack>
             }
             thumbnail={clockUi}
