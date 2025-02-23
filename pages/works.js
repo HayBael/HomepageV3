@@ -19,7 +19,7 @@ const Works = () => (
             id="clok"
             title={
               <Stack direction="row" align="center" spacing={2}>
-                <Badge variant="solid" colorScheme="blue" fontSize="md" px={3} py={2} borderRadius="md" display="flex" alignItems="center" gap={1}>
+                <Badge variant="solid" colorScheme="blue" fontSize="md" px={3} py={2} borderRadius="xs" display="flex" alignItems="center" gap={1}>
                   <HiStar /> New
                 </Badge>
                 <span>Melodify</span>
