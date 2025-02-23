@@ -36,10 +36,10 @@ const Works = () => (
         <Section>
           <WorkGridItem
             id="clok"
-            title="Asaweh"
+            title="Melodify"
             thumbnail={clockUi}
           >
-            A Simple Website With Block.
+            Feel the Rhythm, Control the Sound.
           </WorkGridItem>
         </Section>
       </SimpleGrid>
